@@ -21,11 +21,11 @@ Executar o comando `npm run dev` para rodar a API.
 
 Segue uma lista dos comandos que provavelmente serão mais usados:
 
-Gerar migration: `knex migrate:make nome_da_migration`
-Rodar migrations: `knex migrate:latest`
-Gerar seed: `knex seed:make nome_da_seed`
-Rodar seed: `knex seed:run`
-Dar Rollback na última migration executada: `knex migrate:rollback`
+- Gerar migration: `knex migrate:make nome_da_migration`
+- Rodar migrations: `knex migrate:latest`
+- Gerar seed: `knex seed:make nome_da_seed`
+- Rodar seed: `knex seed:run`
+- Dar Rollback na última migration executada: `knex migrate:rollback`
 
 
 
