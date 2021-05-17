@@ -1,0 +1,45 @@
+.home {
+    height: 100vh;
+    position: relative;
+    .navbar{
+        background-color: #E5E5E5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 10vh;
+        padding: 0px 40px 0px 20px;
+        .logo{
+            text-align: center;
+            height: 6vh;            
+        }
+        .menu{
+            a{
+                text-decoration: none;
+            }
+            width: 10vw;
+            display: flex;
+            font-weight: bold;
+            justify-content: space-between;
+        }
+    }
+    .page{
+        display: flex;
+        justify-content: space-between;
+        height: 90vh;
+        align-items: center;
+        .image{
+            max-height: 35vh;
+            margin: auto;
+            border: solid 10px #FF4477;
+        }
+        .menu{
+            width: 50vw;
+            .slogan{
+                color: #FF4477;
+                font-weight: 400;
+                font-size: 64px;                
+            } 
+        }
+        
+    }
+}
