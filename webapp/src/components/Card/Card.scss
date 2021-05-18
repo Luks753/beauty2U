@@ -1,0 +1,23 @@
+@import '../../theme.scss';
+
+.card {
+    display: flex;
+    width: 350px;
+    height: 100px;
+    border: 2px solid $primary;
+    background-color: #fff;
+    .left{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        border-right: 2px solid $primary;
+        .img{
+            margin: auto;
+        }
+    }
+    .right{
+        width: 70%;
+        height: 100%;
+        padding: 10px;
+    }
+}
