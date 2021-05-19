@@ -34,11 +34,77 @@
         }
         .menu{
             width: 50vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             .slogan{
                 color: #FF4477;
                 font-weight: 400;
-                font-size: 64px;                
+                font-size: 64px;
+                font-family: "SimSun" !important;    
+                text-align: center;      
+                margin-bottom: 5%;      
             } 
+        }
+
+        .circle1 {
+            opacity: 24%;
+            background: #FF4477;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 19px;
+            top: 260px;
+            z-index: -99;
+        }
+
+        .circle2 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 54px;
+            top: 334px;
+            z-index: -99;
+        }
+
+        .circle3 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 128px;
+            height: 128px;
+            left: 487px;
+            top: 157px;
+            z-index: -99;
+        }
+
+        .circle4 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            left: 876px;
+            top: 463px;
+            z-index: -99;
+        }
+
+        .circle5 {
+            opacity: 24%;
+            background: #FF4477;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 929px;
+            top: 58px;
+            z-index: -99;
         }
         
     }
