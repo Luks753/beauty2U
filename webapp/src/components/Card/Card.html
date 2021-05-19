@@ -1,27 +1,25 @@
-
 <div class="card">
   <div class="left">
     <img class="img" src="../../assets/imglist.png">
+    <!-- <img class="img" :src="filename"> -->
   </div>
+
+  <div class="separator"></div>
+
   <div class="right">
-    <div>
-      <label class="title">
-      Lorem Ipsum
-    </label>
+    <div class="category">
+      {{category}}
     </div>
-    <div>
-      <label class="desc">
-      Lorem Ipsum
-    </label>
+    <div class="name">
+      {{name}}
     </div>
-    <div>
+    <div class="ratingContainer">
       <img class="img" src="../../assets/star.png">
-      <label>
-        Lorem Ipsum
+      <span class="starRate">{{rate}}</span>
+      <label class="money">
+        <span class="moneyRate">$ $</span> $ $ $
       </label>
-      <img class="img" src="../../assets/star.png">
     </div>
-    
   </div>
 </div>
 
