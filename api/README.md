@@ -8,7 +8,7 @@ API desenvolvida em NodeJS 14.0.0
 - Instalar o Knex globalmente com o comando `npm i -g knex`.
 - Fazer uma cópia do arquivo .env.example, renomear para apenas `.env` e preencher com os dados do seu ambiente.
 - Iniciar o terminal do node e rodar o comando `require('crypto').randomBytes(128).toString('hex')`.
-- Copie o código gerado e cole no campo `TOKEN_SECRET` do arquivo .env.
+- Copie o código gerado e cole no campo `TOKEN` do arquivo .env.
 
 ## Migrations
 
