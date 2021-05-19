@@ -1,15 +1,11 @@
-
 export default {
   name: 'card',
   components: {},
   props: {
-    category: String,
     name: String,
+    date: String,
+    comment: String,
     rate: String,
-    filename: String,
-    src: {
-      type: String
-    },
   },
   data () {
     return {

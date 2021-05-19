@@ -3,7 +3,7 @@ export default {
   name: 'CategoryLabel',
   components: {},
   props: {
-    type: String,
+    link: String,
   },
   data () {
     return {
