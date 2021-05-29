@@ -1,3 +1,118 @@
 .login {
+    height: 100vh;
+    position: relative;
+    .navbar{
+        background-color: #E5E5E5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 10vh;
+        padding: 0px 40px 0px 20px;
+        .logo{
+            text-align: center;
+            height: 6vh;            
+        }
+        .menu{
+            a{
+                text-decoration: none;
+            }
+            width: 10vw;
+            display: flex;
+            font-weight: bold;
+            justify-content: space-between;
+        }
+    }
+    .page{
+        display: flex;
+        justify-content: space-between;
+        height: 90vh;
+        align-items: center;
+        .image{
+            max-height: 35vh;
+            margin: auto;
+            border: solid 10px #FF4477;
+        }
+        .menu{
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;            
+            .login-form{
+                font-family: "Roboto" !important;
+                font-weight: 600;
+                color: #002584;
+                font-size: 14px;
+            }
+            .button{
+                text-align: center;
+                Button{
+                    margin: auto;
+                }
+            }
+            div{
+                margin-bottom: 5px;
+            }
+        }
 
+        .circle1 {
+            opacity: 24%;
+            background: #FF4477;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 19px;
+            top: 260px;
+            z-index: -99;
+        }
+
+        .circle2 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 54px;
+            top: 334px;
+            z-index: -99;
+        }
+
+        .circle3 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 128px;
+            height: 128px;
+            left: 487px;
+            top: 157px;
+            z-index: -99;
+        }
+
+        .circle4 {
+            opacity: 40%;
+            background: #E5E5E5;
+            border-radius: 50%; 
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            left: 876px;
+            top: 463px;
+            z-index: -99;
+        }
+
+        .circle5 {
+            opacity: 24%;
+            background: #FF4477;
+            border-radius: 50%; 
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            left: 929px;
+            top: 58px;
+            z-index: -99;
+        }
+        
+    }
 }

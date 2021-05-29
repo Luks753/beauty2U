@@ -1,11 +1,10 @@
-import Button from '../../components/Button';
 
 export default {
-  name: 'home',
-  components: {
-    'Button': Button
+  name: 'CategoryLabel',
+  components: {},
+  props: {
+    link: String,
   },
-  props: [],
   data () {
     return {
 

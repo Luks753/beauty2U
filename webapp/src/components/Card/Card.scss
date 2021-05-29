@@ -1,0 +1,58 @@
+@import '../../theme.scss';
+
+.card {
+  display: flex;
+  width: 350px;
+  height: 100px;
+  border: 1px solid $border-color;
+  background-color: #fff;
+  border-radius: 4px;
+
+  .left {
+    width: 30%;
+    display: flex;
+    .img{
+      margin: auto;
+    }
+  }
+  .right {
+    width: 70%;
+    margin: auto 12px;
+  }
+  .category {
+    font-size: 16px;
+    color: $secondary;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .name {
+    font-size: 16px;
+    color: $secondary;
+    margin-bottom: 5px;
+  }
+  .money {
+    font-size: 16px;
+    color: $border-color;
+    font-weight: 600;
+  }
+  .moneyRate {
+    font-size: 16px;
+    color: $success;
+    font-weight: 600;
+  }
+  .starRate {
+    font-size: 16px;
+    color: $warning;
+    font-weight: 600;
+    margin-left: 3px;
+    margin-right: 20px;
+  }
+  .ratingContainer {
+    display: flex;
+    align-items: center;
+  }
+  .separator {
+    border-right: 1px solid $border-color;
+    margin: 10px 0;
+  }
+}

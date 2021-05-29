@@ -1,0 +1,19 @@
+@import '../../theme.scss';
+
+.categoryLabel {
+  width: fit-content;
+  border-radius: 50px;
+  padding: 2px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  background-color: #fff;
+  color: $primary;
+  border-radius: 50px;
+  border: 1px solid $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

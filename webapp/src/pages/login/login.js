@@ -1,7 +1,12 @@
+import Button from '../../components/Button';
+import InputLogin from '../../components/InputLogin';
 
 export default {
   name: 'login',
-  components: {},
+  components: {
+    'Button': Button,
+    'Input': InputLogin
+  },
   props: [],
   data () {
     return {
