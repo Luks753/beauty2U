@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 
 router.get('/login', UsersController.login);
 
-router.get('/users/:id?', Auth.verifyJWT, UsersController.index);
+router.get('/users/', Auth.verifyJWT, UsersController.index);
+router.get('/users/:id?', Auth.verifyJWT, UsersController.show);
 router.post('/users', UsersController.signup);
 
 module.exports = router;

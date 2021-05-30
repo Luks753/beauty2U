@@ -1,17 +1,17 @@
 const knex = require('../database');
 const bcrypt = require('bcrypt');
+const ProfessionalsResource = require('./ProfessionalsResource');
+const AddressesResource = require('./AddressesResource');
 
 class UsersResource {
+
+    static fields(){
+        return ['id', 'username', 'email']
+    }
+
     static async search(data) {
         try {
-            let query = knex('users').select('*');
-
-            if (data.id) {
-                query.where('id', data.id);
-            }
-            if (data.username) {
-                query.where('username', data.username);
-            }
+            let query = knex('users').select(this.fields());            
 
             return await query;
         } catch (error) {
@@ -21,15 +21,45 @@ class UsersResource {
 
     static async create(data) {
         try {
+            const professional = data.professional;
             const password = await bcrypt.hash(data.password, parseInt(process.env.SALT_ROUNDS));
-            
+
             const user = {
                 username: data.username,
                 email: data.email,
                 password
             }
-            
-            return await knex('users').insert(user);            
+
+            const save = await knex('users').insert(user);
+
+            if(professional){
+                let address_id;
+                if(professional.address){
+                    address_id = await AddressesResource.create(professional.address);
+                }
+
+                const saveProfessional = await ProfessionalsResource.create({address_id: address_id, user_id: save[0], ...data.professional})
+            }
+
+            return save[0];
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    static async show(id) {
+        try {
+            let user = await knex('users').select(this.fields()).where('id', id);  
+            user = user[0];
+
+            const professional = await ProfessionalsResource.search(user.id);
+
+            const output = {
+                ...user,
+                professional
+            }
+
+            return output;
         } catch (error) {
             console.log(error)
         }

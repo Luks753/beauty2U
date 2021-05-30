@@ -6,7 +6,7 @@ module.exports = {
         const token = req.headers['x-access-token'];
         if (!token) return api(res).error('NÃO AUTORIZADO', 'Faça login para continuar.', 401);
 
-        jwt.verify(token, process.env.SECRET, function (err, user) {
+        jwt.verify(token, process.env.TOKEN, function (err, user) {
             if (err) return api(res).error(
                 'NÃO AUTORIZADO',
                 'Faça login para continuar.',
