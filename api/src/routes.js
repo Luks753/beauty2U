@@ -4,6 +4,7 @@ const express = require('express');
 const Auth = require('./middlewares/Auth');
 const RatingsController = require('./controllers/RatingsController.js');
 const CategoriesController = require('./controllers/CategoriesController.js');
+const SchedulesController = require('./controllers/SchedulesController.js');
 
 
 const router = express.Router();
@@ -30,5 +31,9 @@ router.post('/ratings', RatingsController.create);
 router.get('/categories/', CategoriesController.index);
 router.get('/categories/:id?', CategoriesController.show);
 router.post('/categories', CategoriesController.create);
+
+router.get('/schedules/', SchedulesController.index);
+router.get('/schedules/:professionalId?', SchedulesController.show);
+router.post('/schedules', SchedulesController.create);
 
 module.exports = router;
