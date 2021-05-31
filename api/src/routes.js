@@ -3,6 +3,7 @@ const ServicesController = require('./controllers/ServicesController.js');
 const express = require('express');
 const Auth = require('./middlewares/Auth');
 const RatingsController = require('./controllers/RatingsController.js');
+const CategoriesController = require('./controllers/CategoriesController.js');
 
 
 const router = express.Router();
@@ -25,5 +26,9 @@ router.post('/services', ServicesController.create)
 router.get('/ratings/', RatingsController.index);
 router.get('/ratings/:id?', RatingsController.show);
 router.post('/ratings', RatingsController.create);
+
+router.get('/categories/', CategoriesController.index);
+router.get('/categories/:id?', CategoriesController.show);
+router.post('/categories', CategoriesController.create);
 
 module.exports = router;
