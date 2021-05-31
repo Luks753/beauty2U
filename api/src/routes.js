@@ -31,9 +31,12 @@ router.post('/ratings', RatingsController.create);
 router.get('/categories/', CategoriesController.index);
 router.get('/categories/:id?', CategoriesController.show);
 router.post('/categories', CategoriesController.create);
+router.get('/categories/associations/', CategoriesController.indexAssociations);
+router.post('/categories/associations', CategoriesController.associateWithProfessional);
 
 router.get('/schedules/', SchedulesController.index);
 router.get('/schedules/:professionalId?', SchedulesController.show);
 router.post('/schedules', SchedulesController.create);
+
 
 module.exports = router;

@@ -37,6 +37,29 @@ class CategoriesResource {
         }
     }
 
+    static async associateWithProfessional(data){
+        try{
+            const association = await knex('professionals_categories').insert(data);
+            
+
+            console.log(association)
+            return association;
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    static async indexAssociations(){
+        try {
+            let query = await knex('professionals_categories').select('*');
+
+            console.log(query)
+            return query;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 }
 
 module.exports = CategoriesResource;
