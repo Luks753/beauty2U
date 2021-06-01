@@ -26,11 +26,10 @@ router.post('/services', ServicesController.create)
 
 router.get('/ratings/', RatingsController.index);
 router.get('/ratings/:id?', RatingsController.show);
-router.post('/ratings', RatingsController.create);
+router.post('/ratings', Auth.verifyJWT, RatingsController.create);
 
 router.get('/categories/', CategoriesController.index);
 router.get('/categories/:id?', CategoriesController.show);
-router.post('/categories', CategoriesController.create);
 
 router.get('/schedules/', SchedulesController.index);
 router.get('/schedules/:professionalId?', SchedulesController.show);
