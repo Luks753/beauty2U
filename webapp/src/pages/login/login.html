@@ -1,13 +1,4 @@
-
 <section class="login">
-  <nav class="navbar">
-    <img class="logo" src="../../assets/logo.png">
-    <div class="menu">
-      <router-link to="/login">SOBRE</router-link>
-      |
-      <router-link to="/login">LOGIN</router-link>
-    </div>
-  </nav>
   <div class="page">
     <div class="circle1"></div>
     <div class="circle2"></div>
@@ -19,25 +10,24 @@
         <div class="login-form">
           <div class="field">
             <div>
-              Usuário
+              USUÁRIO
             </div>
-            <Input/>
+            <Input name="user" layout="primary" />
           </div>
           <div class="field">
             <div>
-              Senha
+              SENHA
             </div>
-            <Input type="password"/>
-          </div>  
-          <div class="field">
+            <Input name="password" layout="primary" type="password"/>
+          </div>
+          <div class="checkboxContainer">
             <Input type="checkbox"/>
             <label>Mantenha-me conectado</label>
-          </div>      
-        <div class="button">
+          </div>
+        <div class="btnContainer">
           <Button type="primary">ENTRAR</Button>
           <label>Esqueceu a senha?</label>
         </div>
-        
       </div>
     </div>
   </div>

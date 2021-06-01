@@ -1,3 +1,9 @@
-<input type="text" :name="name" :value="value" @input="$emit('input', $event.target.value)" />
-
+<div class="inputGroup">
+  <input :type="type"
+    :name="name"
+    :placeholder="placeholder"
+    :value="value"
+    :class="layout"
+    @input="$emit('input', $event.target.value)" />
+</div>
 

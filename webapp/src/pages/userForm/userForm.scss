@@ -1,41 +1,36 @@
 @import '../../theme.scss';
 
-.login {
+.userForm {
   .page {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 90vh;
     align-items: center;
-    margin-top: 100px;
-
     .image {
-      max-height: 220px;
+      max-height: 35vh;
+      margin: auto;
       border: solid 10px #FF4477;
     }
-
-    .login-form {
-      font-weight: 500;
-      color: #002584;
-      font-size: 14px;
-    }
-
-    .btnContainer {
-      text-align: center;
-
-      Button {
-        margin: 20px auto;
+    .menu {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .login-form {
+        font-family: "Roboto" !important;
+        font-weight: 600;
+        color: #002584;
+        font-size: 14px;
       }
-    }
-
-    .field {
-      width: 300px;
+      .button {
+        text-align: center;
+        Button {
+          margin: auto;
+        }
+      }
       div {
         margin-bottom: 5px;
       }
-    }
-
-    .checkboxContainer {
-      flex-direction: row;
-      display: flex;
     }
 
     .circle1 {
@@ -97,5 +92,41 @@
       top: 58px;
       z-index: -99;
     }
+  }
+
+  .bgContainer {
+    background-color: $bg-color;
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    padding-top: 0;
+  }
+
+  .header {
+    background-color: $primary;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 16px;
+    color: $secondary !important;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  .form {
+    margin: 40px auto;
+    width: 700px;
+  }
+
+  .btnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
   }
 }

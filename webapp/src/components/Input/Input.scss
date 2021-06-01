@@ -7,4 +7,18 @@ input {
   margin-bottom: 10px;
   border: none;
   color: $secondary;
+
+  &::placeholder {
+    color: $secondary;
+    opacity: 60%;
+  }
+
+  &.primary{
+    background-color: $bg-color;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
 }

@@ -3,10 +3,13 @@ export default {
   name: 'Input',
   components: {},
   props: {
-    value: {
-      type: String,
-      required: true,
-    },
+    type: String,
+    placeholder: String,
+    layout: String,
+    // value: {
+    //   type: String,
+    //   required: true,
+    // },
   },
   data () {
     return {
