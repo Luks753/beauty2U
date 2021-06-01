@@ -1,10 +1,10 @@
-const UsersResource = require('../resources/UsersResource');
 const jwt = require('jsonwebtoken');
+const UsersResource = require('../resources/UsersResource');
 const bcrypt = require('bcrypt');
 
 const AuthProvider = {
     async login(data) {
-        let user = await UsersResource.search({ username: data.login });
+        let user = await UsersResource.search({ username: data.username }, true);
         user = user[0]
 
         if (user) {

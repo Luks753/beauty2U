@@ -9,9 +9,13 @@ class UsersResource {
         return ['id', 'username', 'email']
     }
 
-    static async search(data) {
+    static async search(data, isLogin) {
         try {
             let query = knex('users').select(this.fields());            
+
+            if(isLogin){
+                query.select('password').where('username', data.username);
+            }
 
             return await query;
         } catch (error) {
