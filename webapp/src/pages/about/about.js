@@ -5,14 +5,13 @@ export default {
   props: [],
   data () {
     return {
-
     }
   },
   computed: {
 
   },
   mounted () {
-
+    
   },
   methods: {
 

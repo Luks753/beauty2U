@@ -4,6 +4,7 @@ import home from '../pages/home';
 import login from '../pages/login';
 import userForm from '../pages/userForm';
 import about from '../pages/about';
+import map from '../pages/map';
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/userForm',
       name: 'userForm',
       component: userForm,
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: map,
     },
   ],
 });

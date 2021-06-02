@@ -1,13 +1,11 @@
+import GoogleMap from '../../components/GoogleMap'
 
 export default {
-  name: 'Button',
-  components: {},
-  props: {
-    type: String,
-    onClick: {
-      type: Function
-    }
+  name: 'map',
+  components: {
+    'GoogleMap': GoogleMap
   },
+  props: [],
   data () {
     return {
 

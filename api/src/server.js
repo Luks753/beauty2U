@@ -6,8 +6,8 @@ const port = process.env.PORT || 3333;
 const Env = process.env;
 
 const app = express();
-app.use('/api', router);
 app.use(cors());
+app.use('/api', router);
 
 app.listen(port, ()=>{
     console.log(`API LISTENING ON http://${Env.HOST}:${port}`);

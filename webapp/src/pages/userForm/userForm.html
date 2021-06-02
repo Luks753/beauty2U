@@ -37,17 +37,17 @@
     </div>
     <div class="bgContainer">
       <h4 class="title">CRIAR CONTA</h4>
-      <Input placeholder="Nome de usuário" name="name" />
-      <Input placeholder="Email" name="email" />
-      <Input placeholder="Senha" name="password" />
-      <Input placeholder="Confirmar senha" name="password_confirmation" />
+      <Input v-model="form.username" placeholder="Nome de usuário" name="name" />
+      <Input v-model="form.email" placeholder="Email" name="email" />
+      <Input v-model="form.password" placeholder="Senha" name="password" type="password"/>
+      <Input v-model="confirmPassword"placeholder="Confirmar senha" name="password_confirmation" type="password"/>
     </div>
     <div class="btnContainer">
       <h4 class="title">
         <span style="font-weight: 400;">Já possui conta? </span>
         <router-link  class="title" to="/login">Faça login</router-link>
       </h4>
-      <Button type="primary">SALVAR</Button>
+      <Button :onClick="cadastrar" type="primary">SALVAR</Button>
     </div>
   </div>
 </section>

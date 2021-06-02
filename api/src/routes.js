@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
     res.json({ message: 'Opa' })
 })
 
-router.get('/login', UsersController.login);
+router.post('/login', UsersController.login);
+router.post('/register', UsersController.signup);
 
 router.get('/users/', Auth.verifyJWT, UsersController.index);
 router.get('/users/:id?', Auth.verifyJWT, UsersController.show);
-router.post('/users', UsersController.signup);
 
 router.get('/services/', ServicesController.index);
 router.get('/services/:id?', ServicesController.show);

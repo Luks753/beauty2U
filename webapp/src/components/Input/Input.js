@@ -6,6 +6,8 @@ export default {
     type: String,
     placeholder: String,
     layout: String,
+    name: String,
+    value: ''
     // value: {
     //   type: String,
     //   required: true,

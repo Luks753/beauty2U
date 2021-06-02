@@ -24,7 +24,12 @@ export default {
 
   },
   methods: {
-
+    acharServico(){
+      this.$router.push('userform')
+    },
+    divulgarServico(){
+      
+    }
   }
 }
 

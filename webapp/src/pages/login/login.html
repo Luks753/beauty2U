@@ -12,20 +12,20 @@
             <div>
               USUÁRIO
             </div>
-            <Input name="user" layout="primary" />
+            <Input v-model="form.username" name="login" layout="primary" />
           </div>
           <div class="field">
             <div>
               SENHA
             </div>
-            <Input name="password" layout="primary" type="password"/>
+            <Input v-model="form.password" name="password" layout="primary" type="password"/>
           </div>
           <div class="checkboxContainer">
             <Input type="checkbox"/>
             <label>Mantenha-me conectado</label>
           </div>
         <div class="btnContainer">
-          <Button type="primary">ENTRAR</Button>
+          <Button :onClick="login" type="primary">ENTRAR</Button>
           <label>Esqueceu a senha?</label>
         </div>
       </div>
