@@ -5,7 +5,7 @@ const Auth = require('./middlewares/Auth');
 const RatingsController = require('./controllers/RatingsController.js');
 const CategoriesController = require('./controllers/CategoriesController.js');
 const SchedulesController = require('./controllers/SchedulesController.js');
-
+const AddressController = require("./controllers/AddressController");
 
 const router = express.Router();
 router.use(express.json());
@@ -35,5 +35,7 @@ router.get('/schedules/', SchedulesController.index);
 router.get('/schedules/:professionalId?', SchedulesController.show);
 router.post('/schedules', SchedulesController.create);
 
+router.post('/address', AddressController.create);
+router.get('/address/:id?', AddressController.search);
 
 module.exports = router;
