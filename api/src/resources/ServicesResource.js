@@ -4,7 +4,11 @@ class ServicesResource {
 
     static async show(id) {
         try {
-            let service = await knex('services').select('*').where('id', id);
+            let service = await knex('services').select('*')
+            if(id){
+                service.where('id', id);
+            }
+            
             service = service[0];
 
             const output = {

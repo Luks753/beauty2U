@@ -1,16 +1,4 @@
-<div>
-  <div>
-    <h3>Procure o local</h3>
-    <GmapAutocomplete
-        @place_changed='setPlace'
-      />
-      <button
-        @click='addMarker'
-      >
-        Add
-      </button>
-  </div>
-  <br>
+<div>  
   <GmapMap
     :center='center'
     :zoom='12'

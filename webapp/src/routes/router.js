@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import home from '../pages/home';
 import login from '../pages/login';
 import userForm from '../pages/userForm';
+import professionalForm from '../pages/professionalForm';
 import about from '../pages/about';
 import map from '../pages/map';
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/userForm',
       name: 'userForm',
       component: userForm,
+    },
+    {
+      path: '/professionalForm',
+      name: 'professionalForm',
+      component: professionalForm,
     },
     {
       path: '/map',

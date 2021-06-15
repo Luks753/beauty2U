@@ -30,6 +30,7 @@ router.post('/ratings', Auth.verifyJWT, RatingsController.create);
 
 router.get('/categories/', CategoriesController.index);
 router.get('/categories/:id?', CategoriesController.show);
+router.post('/categories/', CategoriesController.create);
 
 router.get('/schedules/', SchedulesController.index);
 router.get('/schedules/:professionalId?', SchedulesController.show);
@@ -37,5 +38,7 @@ router.post('/schedules', SchedulesController.create);
 
 router.post('/address', AddressController.create);
 router.get('/address/:id?', AddressController.search);
+
+router.get('/professionals/', UsersController.indexProfessionals);
 
 module.exports = router;

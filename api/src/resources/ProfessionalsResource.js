@@ -1,6 +1,8 @@
 const knex = require('../database');
 const bcrypt = require('bcrypt');
 const AddressesResource = require('./AddressesResource');
+const ServicesResource = require('./ServicesResource');
+const CategoriesResource = require('./CategoriesResource');
 
 class ProfessionalsResource {
     static async search(user_id) {
@@ -25,6 +27,8 @@ class ProfessionalsResource {
 
     static async create(data) {
         try {
+            const services = data.services;
+            const categories = data.categories;
             const insertData = {
                 address_id: data.address_id,
                 user_id: data.user_id,
@@ -33,6 +37,18 @@ class ProfessionalsResource {
             }
 
             const professional = await knex('professionals').insert(insertData);
+
+            if(services.length > 0){
+                services.forEach(service => {
+                    ServicesResource.create({professional_id: professional[0], ...service})
+                });
+            }
+
+            if(categories.length > 0){
+                categories.forEach(category=>{
+                    CategoriesResource.associateWithProfessional({professional_id: professional[0], category_id: category.id})
+                })
+            }
 
             return professional;
         } catch (error) {

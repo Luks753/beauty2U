@@ -1,11 +1,21 @@
 
 <section class="map">
-  <div class="header">
-    QUERO ENCONTRAR UM SERVIÇO
-  </div>
-  <div class="form">    
-    <div class="bgContainer">
+
+  <div class="form">
+    <div class="header">
+      <button @click="isMap=true" class="title-header">
+        ENCONTRAR SALÕES POR PERTO
+      </button>
+      <button @click="isMap=false" class="title-header">
+        PROCURAR POR CATEGORIA
+      </button>
+    </div>
+    <div v-if="isMap">
       <GoogleMap/>
+    </div>
+
+    <div v-if="!isMap">
+      <Card category="teste" name="teste2" rate="3" ></Card>
     </div>    
   </div>
 </section>

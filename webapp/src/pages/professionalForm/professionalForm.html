@@ -1,0 +1,53 @@
+<section class="professionalForm">
+  <div class="form">
+    <div class="header">
+      <div @click="isPerfil=true" class="title-header">
+        1. Perfil
+      </div>
+      <div class="arrow-pointer"></div>
+      <div @click="isPerfil=false" class="title-header">
+        2. Serviços
+      </div>
+    </div>
+    <div v-if="isPerfil" class="bgContainer">
+      <h4 class="title">CADASTRAR SALÃO DE BELEZA</h4>
+      <Input v-model="form.username" placeholder="Nome de usuário" name="name" />
+      <Input v-model="form.email" placeholder="Email" name="email" />
+      <Input v-model="form.professional.razao_social" placeholder="Razão Social" name="razao_social" />
+      Atende em domicílio
+      <input type="radio" value="true" v-model="form.professional.atende_domicilio">
+      <label for="one">Sim</label>
+      <input type="radio" value="false" v-model="form.professional.atende_domicilio">
+      <label for="two">Não</label>
+      <Input v-model="form.password" placeholder="Senha" name="password" type="password" />
+      <Input v-model="confirmPassword" placeholder="Confirmar senha" name="password_confirmation" type="password" />
+    </div>
+
+    <div v-if="!isPerfil" class="bgContainer">
+      <h4 class="title">CADASTRAR SERVIÇOS</h4>
+      
+      <Input v-model="service.nome" placeholder="Serviço" name="name" />
+      <Input v-model="service.valor" placeholder="Valor" name="value" />
+      <select v-model="category">
+        <option v-for="category in categories" v-bind:value="category">{{category.nome}}</option>
+      </select>
+      <Button :onClick="addService" type="secondary">+ ADD</Button>
+      Categorias: 
+      <span v-for="category of form.professional.categories">
+        {{ category.nome }}/
+      </span>
+      <li class="list-services" v-for="service of form.professional.services">
+        Serviço: {{ service.nome }}
+        Valor: {{ service.valor }}
+      </li>
+    </div>
+    <div class="btnContainer">
+      <h4 class="title">
+        <span style="font-weight: 400;">Já possui conta? </span>
+        <router-link class="title" to="/login">Faça login</router-link>
+      </h4>
+      <Button v-if="isPerfil" :onClick="passar" type="primary">PRÓXIMO</Button>
+      <Button v-if="!isPerfil" :onClick="cadastrar" type="primary">SALVAR</Button>
+    </div>
+  </div>
+</section>

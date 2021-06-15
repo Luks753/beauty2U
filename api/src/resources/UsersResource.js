@@ -38,6 +38,7 @@ class UsersResource {
 
             if(professional){
                 let address_id;
+                
                 if(professional.address){
                     address_id = await AddressesResource.create(professional.address);
                 }

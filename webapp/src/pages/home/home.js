@@ -28,7 +28,7 @@ export default {
       this.$router.push('userform')
     },
     divulgarServico(){
-      
+      this.$router.push('professionalform')
     }
   }
 }

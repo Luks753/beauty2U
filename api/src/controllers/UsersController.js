@@ -1,4 +1,5 @@
 const UsersResource = require('../resources/UsersResource');
+const ProfessionalsResource = require('../resources/ProfessionalsResource');
 const { api } = require('../helpers/ResponseAPI');
 const AuthProvider = require('../providers/AuthProvider');
 
@@ -6,6 +7,16 @@ const UsersController = {
     async index(request, response) {
         try {
             const resources = await UsersResource.search();
+
+            return api(response).success(resources);
+        } catch (error) {
+            return api(response).error('INVALID_RESOURCE', error.message, error.status);
+        }
+    },
+
+    async indexProfessionals(request, response) {
+        try {
+            const resources = await ProfessionalsResource.search();
 
             return api(response).success(resources);
         } catch (error) {
