@@ -1,0 +1,65 @@
+@import '../../theme.scss';
+
+.showDetails {
+  .container {
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    margin: 40px auto;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .left {
+    padding: 16px;
+    width: 400px;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .image {
+    width: 300px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .text {
+    color: $secondary;
+    margin-bottom: 5px;
+  }
+
+  .right {
+    padding: 16px;
+    width: 400px;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .services {
+    border-collapse: collapse;
+    color: $secondary;
+    th, td {
+      border: 1px solid $primary;
+      border-collapse: collapse;
+      padding: 6px 24px;
+    }
+  }
+
+  .serviceInfo {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 30px;
+    td {
+      padding: 2px 0;
+    }
+  }
+}
+

@@ -6,6 +6,7 @@ import userForm from '../pages/userForm';
 import professionalForm from '../pages/professionalForm';
 import about from '../pages/about';
 import map from '../pages/map';
+import showDetails from '../pages/showDetails';
 
 Vue.use(Router);
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/map',
       name: 'map',
       component: map,
+    },
+    {
+      path: '/showDetails',
+      name: 'showDetails',
+      component: showDetails,
     },
   ],
 });
