@@ -71,6 +71,8 @@ export default {
     },
     addService() {
       this.form.professional.services.push({...this.service})
+      this.service.nome = "";
+      this.service.valor = "";
       const existCategory = this.form.professional.categories.find(category => category.id === this.category.id)
       if(!existCategory){
         this.form.professional.categories.push({...this.category})
