@@ -1,6 +1,8 @@
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { http } from '../../config'
+import auth from '../../services/auth';
+import categories from '../../services/categories';
+
 
 export default {
   name: 'professional-form',
@@ -36,7 +38,7 @@ export default {
 
   },
   mounted() {
-    http.get('categories').then((response) => {
+    categories.index().then((response) => {
       this.categories = response.data.result
     }).catch((error) => {
       console.log(error.response);
@@ -44,9 +46,8 @@ export default {
   },
   methods: {
     cadastrar() {
-      console.log(this.form)
-      if(this.confirmPassword === this.form.password){
-        http.post('register', this.form).then((response)=>{
+      if(this.form.password && this.confirmPassword === this.form.password){
+        auth.cadastrar(this.form).then((response)=>{
           this.$router.push('login')
         }).catch((error) => {
           console.log(error.response);
@@ -57,7 +58,7 @@ export default {
     },
     showPerfil() {
       if (this.confirmPassword === this.form.password) {
-        http.post('register', this.form).then((response) => {
+        auth.cadastrar(this.form).then((response) => {
           this.$router.push('login')
         }).catch((error) => {
           console.log(error.response);

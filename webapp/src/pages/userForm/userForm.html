@@ -43,10 +43,16 @@
       <Input v-model="confirmPassword"placeholder="Confirmar senha" name="password_confirmation" type="password"/>
     </div>
     <div class="btnContainer">
-      <h4 class="title">
-        <span style="font-weight: 400;">Já possui conta? </span>
-        <router-link  class="title" to="/login">Faça login</router-link>
+      <div>
+        <span class="title">
+          <span style="font-weight: 400;">Já possui conta? </span>
+          <router-link  class="title" to="/login">Faça login</router-link>
+      </span>
+        <h4 class="title">
+          <span style="font-weight: 400;">É profissional? </span>
+        <router-link  class="title" to="/professionalForm">Cadastre-se aqui</router-link>        
       </h4>
+      </div>      
       <Button :onClick="cadastrar" type="primary">SALVAR</Button>
     </div>
   </div>

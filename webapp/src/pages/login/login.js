@@ -1,6 +1,6 @@
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { http } from '../../config'
+import auth from '../../services/auth';
 
 export default {
   name: 'login',
@@ -9,11 +9,11 @@ export default {
     'Input': Input
   },
   props: [],
-  data () {
+  data() {
     return {
       name: '',
       value: '',
-      form:{
+      form: {
         username: null,
         password: null
       }
@@ -22,13 +22,12 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
-
-    login(){
-      http.post('login', this.form).then((response)=>{
+    login() {
+      auth.login(this.form).then((response) => {
         localStorage.login = true
         localStorage.username = response.data.result.username
         localStorage.token = response.data.result.token
@@ -38,7 +37,6 @@ export default {
         console.log(error.response);
       });
     }
-
   }
 }
 

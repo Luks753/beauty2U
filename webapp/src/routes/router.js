@@ -22,6 +22,13 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login,
+      beforeEnter: (to, from, next) =>{
+        if(localStorage.login){
+          next({name: 'map'})
+        }else{
+          next()
+        }
+      }      
     },
     {
       path: '/about',
@@ -32,11 +39,25 @@ export default new Router({
       path: '/userForm',
       name: 'userForm',
       component: userForm,
+      beforeEnter: (to, from, next) =>{
+        if(localStorage.login){
+          next({name: 'map'})
+        }else{
+          next()
+        }
+      } 
     },
     {
       path: '/professionalForm',
       name: 'professionalForm',
       component: professionalForm,
+      beforeEnter: (to, from, next) =>{
+        if(localStorage.login){
+          next({name: 'map'})
+        }else{
+          next()
+        }
+      } 
     },
     {
       path: '/map',
@@ -44,12 +65,12 @@ export default new Router({
       component: map,
     },
     {
-      path: '/showDetails',
+      path: '/showDetails/:id',
       name: 'showDetails',
       component: showDetails,
     },
     {
-      path: '/categoriesList',
+      path: '/categoriesList/:nome',
       name: 'categoriesList',
       component: categoriesList
     },

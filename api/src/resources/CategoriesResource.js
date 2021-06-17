@@ -5,19 +5,14 @@ class CategoriesResource {
     static async show(id) {
         try {
             let category = await knex('categories').select('*').where('id', id);
-            category = category[0];
 
-            const output = {
-                ...category
-            }
-
-            return output;
+            return category[0];
         } catch (error) {
             console.log(error)
         }
     }
 
-    static async search(){
+    static async search() {
         try {
             let query = knex('categories').select('*');
 
@@ -37,23 +32,30 @@ class CategoriesResource {
         }
     }
 
-    static async associateWithProfessional(data){
-        try{
+    static async associateWithProfessional(data) {
+        try {
             const association = await knex('professionals_categories').insert(data);
-            
+
 
             console.log(association)
             return association;
-        }catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
 
-    static async indexAssociations(){
+    static async indexAssociations(nome) {
         try {
-            let query = await knex('professionals_categories').select('*');
+            let query = await knex('professionals_categories')
+                .select([
+                    'professionals.user_id as id',
+                    'professionals.razao_social as nome',
+                    'categories.nome as categoria'
+                ])
+                .where('categories.nome', nome)
+                .join('professionals', 'professionals_categories.professional_id', 'professionals.id')
+                .join('categories', 'professionals_categories.category_id', 'categories.id');;
 
-            console.log(query)
             return query;
         } catch (error) {
             console.log(error)

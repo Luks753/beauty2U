@@ -45,7 +45,7 @@ const CategoriesController = {
 
     async indexAssociations(request, response){
         try{
-            const resources = await CategoriesResource.indexAssociations();
+            const resources = await CategoriesResource.indexAssociations(request.params.nome);
 
             return api(response).success(resources);
         }catch(error){

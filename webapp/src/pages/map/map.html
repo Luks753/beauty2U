@@ -7,15 +7,17 @@
         ENCONTRAR SALÕES POR PERTO
       </button>
       <button @click="isMap=false" class="title-header">
-        PROCURAR POR CATEGORIA
+        SER ATENDIDO EM CASA
       </button>
     </div>
     <div v-if="isMap">
       <GoogleMap/>
     </div>
 
-    <div v-if="!isMap">
-      <Card category="teste" name="teste2" rate="3" ></Card>
+    <div class="list" v-if="!isMap">
+      <span @click="openDetails(professional.id)" v-for="professional in domicilio">
+        <Card v-bind:category="professional.categoria" v-bind:name="professional.nome" rate="3" ></Card>
+      </span>
     </div>    
   </div>
 </section>

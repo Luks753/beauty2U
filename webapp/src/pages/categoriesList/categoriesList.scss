@@ -25,6 +25,7 @@
     border-radius: 2px 2px 0px 0px;
 
   }
+  
 
   .paging{
     padding: 16px;
@@ -65,15 +66,17 @@
   }
 
   .container {
-    padding: 16px;
-    border: 1px solid $border-color;
-    border-radius: 2px;
-    margin: 0 auto;
-    margin-bottom: 40px;
+    margin: 40px auto;
     width: 800px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    .list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      div{
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   .left {

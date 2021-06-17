@@ -1,6 +1,6 @@
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { http } from '../../config'
+import auth from '../../services/auth';
 
 export default {
   name: 'userForm',
@@ -9,7 +9,7 @@ export default {
     'Input': Input
   },
   props: [],
-  data () {
+  data() {
     return {
       form: {
         username: null,
@@ -22,18 +22,18 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
-    cadastrar(){
-      if(this.confirmPassword === this.form.password){
-        http.post('register', this.form).then((response)=>{
+    cadastrar() {
+      if (this.form.password && this.confirmPassword === this.form.password) {
+        auth.cadastrar(this.form).then((response) => {
           this.$router.push('login')
         }).catch((error) => {
           console.log(error.response);
         });
-      }else{
+      } else {
         alert('senhas diferentes')
       }
     }

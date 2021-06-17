@@ -10,6 +10,9 @@ export default {
     src: {
       type: String
     },
+    onClick: {
+      type: Function
+    }
   },
   data () {
     return {

@@ -15,8 +15,18 @@ const UsersController = {
     },
 
     async indexProfessionals(request, response) {
-        try {
+        try {            
             const resources = await ProfessionalsResource.search();
+
+            return api(response).success(resources);
+        } catch (error) {
+            return api(response).error('INVALID_RESOURCE', error.message, error.status);
+        }
+    },
+
+    async indexDomicilio(request, response) {
+        try {
+            const resources = await ProfessionalsResource.indexDomicilio();
 
             return api(response).success(resources);
         } catch (error) {
@@ -27,6 +37,16 @@ const UsersController = {
     async show(request, response) {
         try {
             const resources = await UsersResource.show(request.params.id);
+
+            return api(response).success(resources);
+        } catch (error) {
+            return api(response).error('INVALID_RESOURCE', error.message, error.status);
+        }
+    },
+
+    async showProfessional(request, response) {
+        try {
+            const resources = await ProfessionalsResource.search(request.params.id);
 
             return api(response).success(resources);
         } catch (error) {
