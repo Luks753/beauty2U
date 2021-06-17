@@ -1,11 +1,27 @@
 @import '../../theme.scss';
 
 .showDetails {
+  .backButton {
+    padding: 16px;
+    margin: 30px auto;
+    width: 800px;
+    color: $secondary;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   .container {
     padding: 16px;
     border: 1px solid $border-color;
     border-radius: 2px;
-    margin: 40px auto;
+    margin: 0 auto;
+    margin-bottom: 40px;
     width: 800px;
     display: flex;
     flex-direction: row;
@@ -31,16 +47,36 @@
     margin-bottom: 40px;
   }
 
+  .ratingContainer {
+    color: $secondary;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+
+  .starIcon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+
   .text {
     color: $secondary;
     margin-bottom: 5px;
   }
 
   .right {
-    padding: 16px;
+    height: 500px;
     width: 400px;
+    padding: 16px;
     flex-direction: column;
     display: flex;
+    overflow-y: auto;
   }
 
   .services {
@@ -60,6 +96,19 @@
     td {
       padding: 2px 0;
     }
+  }
+
+  .title {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .evaluationHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
