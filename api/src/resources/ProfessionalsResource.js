@@ -27,13 +27,14 @@ class ProfessionalsResource {
 
     static async create(data) {
         try {
+
             const services = data.services;
             const categories = data.categories;
             const insertData = {
                 address_id: data.address_id,
                 user_id: data.user_id,
                 razao_social: data.razao_social,
-                atende_domicilio: data.atende_domicilio,
+                atende_domicilio: data.atende_domicilio ? 1 : 0, // No banco está como int
             }
 
             const professional = await knex('professionals').insert(insertData);
