@@ -7,6 +7,7 @@ import professionalForm from '../pages/professionalForm';
 import about from '../pages/about';
 import map from '../pages/map';
 import showDetails from '../pages/showDetails';
+import categoriesList from '../pages/categoriesList';
 
 Vue.use(Router);
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/showDetails',
       name: 'showDetails',
       component: showDetails,
+    },
+    {
+      path: '/categoriesList',
+      name: 'categoriesList',
+      component: categoriesList
     },
   ],
 });
