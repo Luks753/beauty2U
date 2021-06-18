@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     acharServico(){
-      this.$router.push('userform')
+      this.$router.push('map')
     },
     divulgarServico(){
       this.$router.push('professionalform')
