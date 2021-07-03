@@ -20,6 +20,14 @@ export default {
         password: null,
         professional: {
           razao_social: null,
+          address: {
+            cep: null,
+            logradouro: null,
+            numero: null,
+            bairro: null,
+            cidade: null,
+            estado: null,
+          },
           atende_domicilio: null,
           services: [],
           categories: []

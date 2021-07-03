@@ -14,6 +14,18 @@
       <Input v-model="form.username" placeholder="Nome de usuário" name="name" />
       <Input v-model="form.email" placeholder="Email" name="email" />
       <Input v-model="form.professional.razao_social" placeholder="Razão Social" name="razao_social" />
+      <Input v-model="form.professional.cpfcnpj"placeholder="CPF/CNPJ" name="CPF/CPNJ" />
+      <h4 class="title">ENDEREÇO</h4>
+      <div class = "addressFieldSetPartOne">
+        <Input v-model="form.professional.address.cep" placeholder="CEP" name="CEP" />
+        <Input style="margin-left: 10px; width: 100%;" v-model="form.professional.address.logradouro" placeholder="Logradouro" name="Logradouro" />
+      </div>
+      <div class = "addressFieldSetPartTwo">
+        <Input v-model="form.professional.address.numero" placeholder="Número" name="Número" />
+        <Input style="margin-left: 10px; width:100%" v-model="form.professional.address.bairro" placeholder="Bairro" name="Bairro" />
+        <Input style="margin-left: 10px;" v-model="form.professional.address.cidade" placeholder="Cidade" name="Cidade" />
+      </div>
+      <Input v-model="form.professional.address.estado" placeholder="Estado" name="Estado" />
       Atende em domicílio
       <input type="radio" value="true" v-model="form.professional.atende_domicilio">
       <label for="one">Sim</label>
