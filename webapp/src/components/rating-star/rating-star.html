@@ -1,0 +1,23 @@
+<div class="rating-star">
+    <label
+        class="star-rating__star"
+        v-for="(rating, index) in ratings"
+        :class="{'is-selected': ((value >= rating) && value != null), 'is-disabled': disabled}"
+        @click="set(rating)"
+        @mouseover="star_over(rating)"
+        @mouseout="star_out"
+        @click="$emit('input', rating)"
+    >
+        <input
+            class="star-rating star-rating__checkbox"
+            type="radio"
+            :value="rating"
+            :name="'ratestar' + name"
+            :key="'ratestar' + name"
+            v-model="value"
+            :disabled="disabled"
+        >
+        <i class="star-icon"></i>
+    </label>
+</div>
+

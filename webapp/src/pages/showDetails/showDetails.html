@@ -19,7 +19,7 @@
         <CategoryLabel link="/categoriesList/manicure">manicure</CategoryLabel>
       </div>
       <p class="text">Já realizou um procedimento nesse lugar? Deixe uma avaliação</p>
-      <Button type="primary">AVALIAR</Button>
+      <Button type="primary" :onClick="openModal">AVALIAR</Button>
     </div>
 
     <div id="right" class="right">
@@ -82,5 +82,5 @@
     </div>
 
   </div>
+  <Modal v-if="showModal" :onClose="closeModal" />
 </section>
-

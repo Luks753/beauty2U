@@ -14,6 +14,7 @@
     "vue": "^2.5.11",
     "vue-generate-component": "^3.0.1",
     "vue-router": "^3.5.1",
+    "vue-star-rating": "^1.7.0",
     "vue2-google-maps": "^0.10.7"
   },
   "browserslist": [
