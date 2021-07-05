@@ -1,8 +1,9 @@
 import Button from '../../components/Button';
 import CategoryLabel from '../../components/CategoryLabel';
 import RatingCard from '../../components/RatingCard';
-import professionals from '../../services/professionals';
 import Modal from '../../components/Modal';
+import professionals from '../../services/professionals';
+import rating from '../../services/rating';
 
 export default {
   name: 'showDetails',
@@ -17,7 +18,9 @@ export default {
     return {
       form: {},
       user_id: null,
-      showModal: false
+      showModal: false,
+      services: {},
+      ratings: {},
     }
   },
   computed: {
@@ -25,12 +28,24 @@ export default {
   },
   mounted () {
     this.user_id = this.$route.params.id;
-    this.load()
+    this.load();
+
+    rating.index().then((response)=>{
+      this.ratings = response.data.result;
+    }).catch((error) => {
+      console.log(error.response);
+    });
   },
   methods: {
     load() {
       professionals.show(this.user_id).then((response)=>{
         this.form = response.data.result;
+      }).catch((error) => {
+        console.log(error.response);
+      });
+
+      professionals.showServices().then((response)=>{
+        this.services = response.data.result;
       }).catch((error) => {
         console.log(error.response);
       });
@@ -56,7 +71,7 @@ export default {
 
     closeModal() {
       this.showModal = false;
-    }
+    },
   }
 }
 

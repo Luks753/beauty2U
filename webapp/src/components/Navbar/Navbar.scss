@@ -21,4 +21,13 @@
     color: $secondary;
     font-weight: 500;
   }
+
+  .logout {
+    border: none;
+    color: $secondary;
+    background: transparent;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+  }
 }

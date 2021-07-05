@@ -8,8 +8,11 @@ const professionals = {
         return http.get(`professionals/${id}`);
     },
     indexDomicilio(params){
-        return http.get('domicilio', params);        
-    }
+        return http.get('domicilio', params);
+    },
+    showServices(params) {
+      return http.get('services', params);
+  },
 }
 
 export default professionals;
