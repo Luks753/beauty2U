@@ -8,5 +8,7 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropColumns(['cpf', 'cnpj', 'average']);
+    return knex.schema.table(table => {
+        table.dropColumns(['cpf', 'cnpj', 'average']);
+    })
 };
