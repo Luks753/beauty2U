@@ -2,6 +2,8 @@ const knex = require('../database');
 const bcrypt = require('bcrypt');
 const ProfessionalsResource = require('./ProfessionalsResource');
 const AddressesResource = require('./AddressesResource');
+const ServicesResource = require('./ServicesResource');
+const CategoriesResource = require('./CategoriesResource');
 
 class UsersResource {
 
@@ -58,6 +60,11 @@ class UsersResource {
             user = user[0];
 
             const professional = await ProfessionalsResource.search(user.id);
+
+            if (professional) {
+                professional.services = await ServicesResource.search({ professional_id: professional.id });
+                professional.categories = await CategoriesResource.getAssociation(professional.id);
+            }
 
             const output = {
                 ...user,

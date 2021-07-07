@@ -36,7 +36,7 @@ const UsersController = {
 
     async show(request, response) {
         try {
-            const resources = await UsersResource.show(request.params.id);
+            const resources = await UsersResource.show(request.params.id ? request.params.id : request.user.id);
 
             return api(response).success(resources);
         } catch (error) {

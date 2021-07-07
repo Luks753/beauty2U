@@ -1,14 +1,17 @@
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import CategoryLabel from '../../components/CategoryLabel';
 import auth from '../../services/auth';
 import categories from '../../services/categories';
+
 
 
 export default {
   name: 'professional-form',
   components: {
     'Button': Button,
-    'Input': Input
+    'Input': Input,
+    'CategoryLabel': CategoryLabel
   },
   props: [],
   data() {
@@ -17,7 +20,6 @@ export default {
       form: {
         username: null,
         email: null,
-        password: null,
         professional: {
           razao_social: null,
           address: {
@@ -51,9 +53,17 @@ export default {
     }).catch((error) => {
       console.log(error.response);
     });
-    
+    this.showPerfil();
   },
   methods: {
+    showPerfil() {
+      auth.me().then((response) => {
+        const result = response.data.result;
+        this.form.professional = result.professional;
+      }).catch((error) => {
+        console.log(error.response);
+      });
+    },
     cadastrar() {
       if(this.form.password && this.confirmPassword === this.form.password){
         auth.cadastrar(this.form).then((response)=>{
@@ -64,13 +74,6 @@ export default {
       }else{
         alert('senhas diferentes')
       }
-    },
-    showPerfil() {
-        auth.me().then((response) => {
-          console.log(response.data)
-        }).catch((error) => {
-          console.log(error.response);
-        });
     },
     passar() {
       this.isPerfil = false;

@@ -1,4 +1,5 @@
 const knex = require('../database');
+const ProfessionalsResource = require('./ProfessionalsResource');
 
 class RatingsResource {
 
@@ -17,7 +18,7 @@ class RatingsResource {
         }
     }
 
-    static async search(){
+    static async search() {
         try {
             let query = knex('ratings').select('*');
 
@@ -28,7 +29,7 @@ class RatingsResource {
     }
 
     static async create(data) {
-        try {
+        try {            
             const ratings = await knex('ratings').insert(data);
 
             return ratings[0];

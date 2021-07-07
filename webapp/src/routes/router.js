@@ -6,6 +6,7 @@ import userForm from '../pages/userForm';
 import professionalForm from '../pages/professionalForm';
 import about from '../pages/about';
 import map from '../pages/map';
+import me from '../pages/me';
 import showDetails from '../pages/showDetails';
 import categoriesList from '../pages/categoriesList';
 
@@ -56,6 +57,18 @@ export default new Router({
           next({name: 'map'})
         }else{
           next()
+        }
+      } 
+    },
+    {
+      path: '/me',
+      name: 'me',
+      component: me,
+      beforeEnter: (to, from, next) =>{
+        if(localStorage.login){
+          next()
+        }else{
+          next({name: 'userForm'})
         }
       } 
     },

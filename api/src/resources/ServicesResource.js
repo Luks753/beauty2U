@@ -4,12 +4,13 @@ class ServicesResource {
 
     static async show(id) {
         try {
-            let service = await knex('services').select('*')
+            let service = knex('services').select('*');
+
             if(id){
-                service.where('id', id);
+                service.where('professional_id', id);
             }
             
-            service = service[0];
+            service = await service[0];
 
             const output = {
                 ...service
@@ -21,9 +22,13 @@ class ServicesResource {
         }
     }
 
-    static async search(){
+    static async search(params = {}){
         try {
             let query = knex('services').select('*');
+            
+            if(params.professional_id){
+                query.where('professional_id', params.professional_id)
+            }
 
             return await query;
         } catch (error) {

@@ -40,7 +40,6 @@ export default {
         nota: this.rating,
         comentario: this.text,
         data_hora: today,
-        service_id: null,
         user_id: this.user_id,
       }
       rating.create(data).then((response) => {

@@ -17,6 +17,8 @@ router.get('/', (req, res) => {
 router.post('/login', UsersController.login);
 router.post('/register', UsersController.signup);
 
+router.get('/me', Auth.verifyJWT, UsersController.show);
+
 router.get('/users/', Auth.verifyJWT, UsersController.index);
 router.get('/users/:id?', Auth.verifyJWT, UsersController.show);
 

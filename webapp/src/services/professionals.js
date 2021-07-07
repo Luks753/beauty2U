@@ -7,12 +7,12 @@ const professionals = {
     show(id) {
         return http.get(`professionals/${id}`);
     },
-    indexDomicilio(params){
+    indexDomicilio(params) {
         return http.get('domicilio', params);
     },
     showServices(params) {
-      return http.get('services', params);
-  },
+        return http.get('services', params);
+    },
 }
 
 export default professionals;

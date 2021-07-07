@@ -9,7 +9,7 @@ Vue.component('star-rating', StarRating.default);
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'API-KEY',
+    key: 'AIzaSyAExBfy9-lotjWj9tZpIzSc_--tWMbwKUk',
     libraries: 'places',
   }
 });

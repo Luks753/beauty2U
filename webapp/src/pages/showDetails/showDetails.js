@@ -21,6 +21,7 @@ export default {
       showModal: false,
       services: {},
       ratings: {},
+      average: null
     }
   },
   computed: {
@@ -32,6 +33,12 @@ export default {
 
     rating.index().then((response)=>{
       this.ratings = response.data.result;
+      if(this.ratings.length > 0){
+        this.average = this.ratings.reduce(function(prev, cur) {
+          return prev + cur.nota;
+        }, 0);
+        console.log(this.average)
+      }
     }).catch((error) => {
       console.log(error.response);
     });

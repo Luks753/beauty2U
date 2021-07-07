@@ -36,8 +36,6 @@ class CategoriesResource {
         try {
             const association = await knex('professionals_categories').insert(data);
 
-
-            console.log(association)
             return association;
         } catch (error) {
             console.log(error)
@@ -54,9 +52,23 @@ class CategoriesResource {
                 ])
                 .where('categories.nome', nome)
                 .join('professionals', 'professionals_categories.professional_id', 'professionals.id')
-                .join('categories', 'professionals_categories.category_id', 'categories.id');;
+                .join('categories', 'professionals_categories.category_id', 'categories.id');
 
             return query;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    static async getAssociation(id) {
+        try {
+            let query = knex('professionals_categories')
+                .select('categories.nome as categoria')
+                .where('professionals_categories.professional_id', id)
+                .join('professionals', 'professionals_categories.professional_id', 'professionals.id')
+                .join('categories', 'professionals_categories.category_id', 'categories.id');
+                
+            return await query;
         } catch (error) {
             console.log(error)
         }
