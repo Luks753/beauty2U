@@ -1,0 +1,23 @@
+<section class="categoriesList">
+    <div class="backButton">
+        <svg style="cursor:pointer;" width="10" height="20" viewBox="0 0 10 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.09717 20L10 17.65L3.81916 10L10 2.35L8.09717 0L0 10L8.09717 20Z" fill="white" />
+        </svg>
+        <span>CATEGORIA: {{category}}</span>
+    </div>
+    <div class="container">
+        <div class="list" v-if="!isMap">
+            <span @click="openDetails(professional.id)" v-for="professional in professionals">
+                <Card v-bind:category="professional.categoria" v-bind:name="professional.nome" rate="3"></Card>
+            </span>
+        </div>
+    </div>
+    <div class="paging">
+        <span class="selected-dot">1</span>
+        <span class="dot">2</span>
+        <span class="dot">3</span>
+        <span class="dot">4</span>
+    </div>
+    </div>
+</section>

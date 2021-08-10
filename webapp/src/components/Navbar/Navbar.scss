@@ -1,0 +1,33 @@
+@import '../../theme.scss';
+
+.navbar {
+  background-color: #E5E5E5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0px 40px;
+
+  .logo {
+    height: 30px;
+  }
+
+  .menu {
+    a {
+      text-decoration: none;
+      color: $secondary;
+      padding: 0 20px;
+    }
+    color: $secondary;
+    font-weight: 500;
+  }
+
+  .logout {
+    border: none;
+    color: $secondary;
+    background: transparent;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}

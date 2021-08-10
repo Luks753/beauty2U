@@ -1,0 +1,24 @@
+@import '../../theme.scss';
+
+input {
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: none;
+  color: $secondary;
+
+  &::placeholder {
+    color: $secondary;
+    opacity: 60%;
+  }
+
+  &.primary{
+    background-color: $bg-color;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}

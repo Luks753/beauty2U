@@ -1,0 +1,62 @@
+<section class="showDetails">
+  <a href="/" class="backButton">
+    <svg width="10" height="18" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.09717 20L10 17.65L3.81916 10L10 2.35L8.09717 0L0 10L8.09717 20Z" fill="#002584"/>
+    </svg>
+    <span style="margin-left: 10px;">VOLTAR</span>
+  </a>
+  <div class="container">
+
+    <div class="left">
+      <img class="image" src="../../assets/image-login.png">
+      <div class="ratingContainer" v-on:click="showEvaluations">
+        <img class="starIcon" src="../../assets/star.png">
+        <span v-if="average === null">Ainda não há avaliações. Seja o primeiro!</span>
+        <span v-else>{{average}}</span>
+      </div>
+      <span class="text">CATEGORIAS:</span>
+      <div class="categories">
+        <CategoryLabel link="/categoriesList/cabelo">cabelo</CategoryLabel>
+        <CategoryLabel link="/categoriesList/manicure">manicure</CategoryLabel>
+      </div>
+      <p class="text">Já realizou um procedimento nesse lugar? Deixe uma avaliação</p>
+      <Button type="primary" :onClick="openModal">AVALIAR</Button>
+    </div>
+
+    <div id="right" class="right">
+      <table class="serviceInfo">
+        <tr>
+          <th>{{form.razao_social}}</th>
+        </tr>
+        <tr>
+          <td>{{form.address.logradouro}}, {{form.address.numero}}, {{form.address.bairro}}</td>
+        </tr>
+        <tr>
+          <td>{{form.address.cidade}} - {{form.address.estado}}</td>
+        </tr>
+      </table>
+      <table class="services" rules="all">
+        <tr>
+          <th>Serviços disponíveis</th>
+          <th>Valor</th>
+        </tr>
+        <tr v-for="(row, index) in services">
+          <td>{{row.nome}}</td>
+          <td>R$ {{row.valor}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="evaluations" class="right" style="display: none;">
+      <div class="evaluationHeader">
+        <h4 class="title">AVALIAÇÕES</h4>
+        <svg v-on:click="hideEvaluations" style="cursor: pointer;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1.61143L14.3886 0L8 6.38857L1.61143 0L0 1.61143L6.38857 8L0 14.3886L1.61143 16L8 9.61143L14.3886 16L16 14.3886L9.61143 8L16 1.61143Z" fill="#FF4477" fill-opacity="0.5"/>
+        </svg>
+      </div>
+      <RatingCard v-for="(row, index) in ratings" :date="row.data_hora" name="lucas123123" :comment="row.comentario" :rate="row.nota" />
+    </div>
+
+  </div>
+  <Modal v-if="showModal" :onClose="closeModal" />
+</section>

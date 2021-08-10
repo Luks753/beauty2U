@@ -1,0 +1,114 @@
+@import '../../theme.scss';
+
+.showDetails {
+  .backButton {
+    padding: 16px;
+    margin: 30px auto;
+    width: 800px;
+    color: $secondary;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .container {
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .left {
+    padding: 16px;
+    width: 400px;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .image {
+    width: 300px;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  .ratingContainer {
+    color: $secondary;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+
+  .starIcon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+
+  .text {
+    color: $secondary;
+    margin-bottom: 5px;
+  }
+
+  .right {
+    height: 500px;
+    width: 400px;
+    padding: 16px;
+    flex-direction: column;
+    display: flex;
+    overflow-y: auto;
+  }
+
+  .services {
+    border-collapse: collapse;
+    color: $secondary;
+    th, td {
+      border: 1px solid $primary;
+      border-collapse: collapse;
+      padding: 6px 24px;
+    }
+  }
+
+  .serviceInfo {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 30px;
+    td {
+      padding: 2px 0;
+    }
+  }
+
+  .title {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .evaluationHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+

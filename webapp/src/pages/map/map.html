@@ -1,0 +1,24 @@
+
+<section class="map">
+
+  <div class="form">
+    <div class="header">
+      <button @click="isMap=true" class="title-header">
+        ENCONTRAR SALÕES POR PERTO
+      </button>
+      <button @click="isMap=false" class="title-header">
+        SER ATENDIDO EM CASA
+      </button>
+    </div>
+    <div v-if="isMap">
+      <GoogleMap/>
+    </div>
+
+    <div class="list" v-if="!isMap">
+      <span @click="openDetails(professional.id)" v-for="professional in domicilio">
+        <Card v-bind:category="professional.categoria" v-bind:name="professional.nome" rate="3" ></Card>
+      </span>
+    </div>    
+  </div>
+</section>
+

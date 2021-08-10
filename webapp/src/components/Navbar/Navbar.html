@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <router-link to="/">
+    <img class="logo" src="../../assets/logo.png">
+  </router-link>
+  <div v-if="!name" class="menu">
+    <router-link to="/about">SOBRE</router-link>
+    |
+    <router-link to="/login">LOGIN</router-link>
+    |
+    <router-link to="/userform">CADASTRE-SE</router-link>
+  </div>
+  <div v-if="name" class="menu">
+    <span>Olá {{name}}</span>
+    |
+    <button @click="logout" class="logout">Sair</button>
+  </div>
+</nav>

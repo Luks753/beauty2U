@@ -1,0 +1,101 @@
+@import '../../theme.scss';
+
+.login {
+  .page {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+
+    .image {
+      max-height: 220px;
+      border: solid 10px #FF4477;
+    }
+
+    .login-form {
+      font-weight: 500;
+      color: #002584;
+      font-size: 14px;
+    }
+
+    .btnContainer {
+      text-align: center;
+
+      Button {
+        margin: 20px auto;
+      }
+    }
+
+    .field {
+      width: 300px;
+      div {
+        margin-bottom: 5px;
+      }
+    }
+
+    .checkboxContainer {
+      flex-direction: row;
+      display: flex;
+    }
+
+    .circle1 {
+      opacity: 24%;
+      background: #FF4477;
+      border-radius: 50%;
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      left: 19px;
+      top: 260px;
+      z-index: -99;
+    }
+
+    .circle2 {
+      opacity: 40%;
+      background: #E5E5E5;
+      border-radius: 50%;
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      left: 54px;
+      top: 334px;
+      z-index: -99;
+    }
+
+    .circle3 {
+      opacity: 40%;
+      background: #E5E5E5;
+      border-radius: 50%;
+      position: absolute;
+      width: 128px;
+      height: 128px;
+      left: 487px;
+      top: 157px;
+      z-index: -99;
+    }
+
+    .circle4 {
+      opacity: 40%;
+      background: #E5E5E5;
+      border-radius: 50%;
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      left: 876px;
+      top: 463px;
+      z-index: -99;
+    }
+
+    .circle5 {
+      opacity: 24%;
+      background: #FF4477;
+      border-radius: 50%;
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      left: 929px;
+      top: 58px;
+      z-index: -99;
+    }
+  }
+}

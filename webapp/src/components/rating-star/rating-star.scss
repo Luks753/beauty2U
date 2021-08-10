@@ -1,0 +1,42 @@
+%visually-hidden {
+   position: absolute;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+   height: 1px; width: 1px;
+   margin: -1px; padding: 0; border: 0;
+}
+
+.star-rating {
+    &__star {
+        i{
+            background-image:url('../assets/images/icons/star.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width:14px;
+            height:14px;
+            display: inline-block;
+            margin-right:4px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.is-selected {
+            i{
+                background-image:url('../assets/images/icons/star_yellow.svg');
+            }
+        }
+
+        &.is-disabled:hover {
+            cursor: default;
+        }
+    }
+
+    &__checkbox {
+        @extend %visually-hidden;
+    }
+}
+
+
